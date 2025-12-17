@@ -134,4 +134,14 @@ footer {
     border-top: 1px solid #222;
     color: #666;
     font-size: 0.9rem;
+
+}
+.avatar {
+    width: 150px;       /* Kích thước ảnh */
+    height: 150px;
+    border-radius: 50%; /* Bo tròn thành hình tròn */
+    object-fit: cover;  /* Cắt ảnh gọn gàng không bị méo */
+    border: 3px solid var(--primary-color); /* Viền màu Neon */
+    margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.3); /* Hiệu ứng tỏa sáng */
 }
