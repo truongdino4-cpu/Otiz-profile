@@ -1,23 +1,44 @@
+/* =========================================
+   OTIZ PROFILE - AQARA PROFESSIONAL THEME
+   ========================================= */
+
 /* Reset mặc định */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Outfit', sans-serif; /* Font chữ hiện đại */
+    font-family: 'Outfit', sans-serif;
 }
 
-/* Màu chủ đạo */
+/* --- BẢNG MÀU MỚI (AQARA VIBE) --- */
 :root {
-    --bg-color: #0a0a0a;       /* Đen sâu */
-    --text-color: #e0e0e0;     /* Trắng xám */
-    --primary-color: #00d2ff;  /* Xanh Neon (Cyan) */
-    --card-bg: #161616;        /* Màu nền thẻ */
+    /* Nền tối nhưng ngả xanh navy sâu, sang hơn đen tuyền */
+    --bg-color: #0B101A;
+
+    /* Màu chữ chính */
+    --text-color: #e0e0e0;
+
+    /* MÀU CHỦ ĐẠO MỚI: Aqara Professional Blue */
+    /* Màu xanh này nhìn tin cậy và công nghệ hơn màu neon cũ */
+    --primary-color: #009ADA; 
+
+    /* Nền thẻ (Card) dạng kính mờ (Glassmorphism nhẹ) */
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-light: rgba(255, 255, 255, 0.1);
 }
 
+/* --- CẤU TRÚC NỀN TẢNG VỚI ĐIỂM NHẤN --- */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    
+    /* TẠO BACKGROUND ĐIỂM NHẤN CHUYÊN NGHIỆP */
+    /* Đây là các "điểm sáng" mờ ảo phía sau, tạo chiều sâu */
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(0, 154, 218, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(0, 154, 218, 0.1) 0%, transparent 40%);
+    background-attachment: fixed; /* Giữ nguyên nền khi cuộn trang */
 }
 
 .container {
@@ -26,14 +47,28 @@ body {
     padding: 0 20px;
 }
 
-/* Hero Section */
+/* --- HERO SECTION (Cập nhật) --- */
 .hero {
-    height: 100vh; /* Full màn hình */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+    /* Tạo hiệu ứng ánh sáng trung tâm mạnh hơn một chút */
+    background: radial-gradient(circle at center, rgba(0, 154, 218, 0.2) 0%, transparent 70%);
+    position: relative;
+}
+
+/* Avatar (Vẫn giữ, chỉ đổi màu viền theo theme mới) */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color); /* Viền màu Aqara Blue */
+    margin-bottom: 20px;
+    /* Hiệu ứng tỏa sáng mềm mại hơn */
+    box-shadow: 0 0 30px rgba(0, 154, 218, 0.3);
 }
 
 .subtitle {
@@ -42,6 +77,7 @@ body {
     margin-bottom: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 h1 {
@@ -49,16 +85,20 @@ h1 {
     line-height: 1.1;
     margin-bottom: 20px;
     font-weight: 700;
+    /* Tạo hiệu ứng chữ gradient nhẹ (tùy chọn) */
+    background: linear-gradient(to right, #ffffff, var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .description {
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto 30px auto;
-    color: #888;
+    color: #a0aabf; /* Màu chữ mô tả hơi xanh xám cho hợp nền */
 }
 
-/* Buttons */
+/* --- BUTTONS (Cập nhật) --- */
 .buttons {
     display: flex;
     gap: 15px;
@@ -67,81 +107,176 @@ h1 {
 
 .btn {
     text-decoration: none;
-    padding: 12px 30px;
+    padding: 12px 35px;
     border-radius: 50px;
-    font-weight: 500;
-    transition: 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: #000;
+    /* Nút chính dùng gradient cho nổi bật */
+    background: linear-gradient(135deg, var(--primary-color), #0077a8);
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 154, 218, 0.3);
 }
 
 .btn-outline {
-    border: 1px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     color: var(--primary-color);
+    background: transparent;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); /* Hiệu ứng phát sáng */
+    box-shadow: 0 10px 25px rgba(0, 154, 218, 0.4);
 }
 
-/* Section About */
+.btn-outline:hover {
+    background: rgba(0, 154, 218, 0.1);
+}
+
+/* --- CÁC SECTION CHUNG --- */
 .section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     font-size: 2.5rem;
+    position: relative;
+    color: #fff;
 }
 
-.grid-3 {
+/* Gạch chân nhỏ dưới tiêu đề */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* --- CARDS (Về tôi & Dự án) - Cập nhật style kính mờ --- */
+.grid-3, .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.card {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #222;
-    transition: 0.3s;
+/* Style chung cho các thẻ */
+.card, .project-card {
+    background: var(--card-bg); /* Nền bán trong suốt */
+    border: 1px solid var(--border-light); /* Viền mỏng tinh tế */
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px); /* Hiệu ứng làm mờ nền phía sau thẻ */
+    overflow: hidden;
 }
 
-.card:hover {
+/* Hiệu ứng hover chung */
+.card:hover, .project-card:hover {
     border-color: var(--primary-color);
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(0, 11, 26, 0.5); /* Bóng đổ sâu hơn */
+}
+
+/* Style riêng cho thẻ "Về tôi" */
+.card {
+    padding: 40px 30px;
+    text-align: center;
 }
 
 .card i {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    /* Tạo bóng sáng nhẹ cho icon */
+    filter: drop-shadow(0 0 8px rgba(0, 154, 218, 0.6));
 }
 
 .card h3 {
     margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #fff;
 }
 
-/* Footer */
+.card p {
+    color: #a0aabf;
+    font-size: 0.95rem;
+}
+
+/* Style riêng cho thẻ "Dự án" */
+.project-img {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.project-content {
+    padding: 30px;
+}
+
+.project-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Tag công nghệ (Cập nhật màu Aqara) */
+.tech-stack span {
+    display: inline-block;
+    background: rgba(0, 154, 218, 0.1); /* Nền xanh Aqara nhạt */
+    color: var(--primary-color);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 154, 218, 0.3);
+}
+
+.project-content p {
+    color: #a0aabf;
+    margin-bottom: 20px;
+}
+
+.btn-text {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.btn-text i {
+    margin-left: 8px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    color: var(--primary-color);
+}
+
+.btn-text:hover {
+    color: var(--primary-color);
+}
+
+.btn-text:hover i {
+    transform: translateX(5px);
+}
+
+/* --- FOOTER --- */
 footer {
     text-align: center;
-    padding: 20px;
-    border-top: 1px solid #222;
-    color: #666;
+    padding: 30px 20px;
+    border-top: 1px solid var(--border-light);
+    color: #7a8ba6;
     font-size: 0.9rem;
-
-}
-.avatar {
-    width: 150px;       /* Kích thước ảnh */
-    height: 150px;
-    border-radius: 50%; /* Bo tròn thành hình tròn */
-    object-fit: cover;  /* Cắt ảnh gọn gàng không bị méo */
-    border: 3px solid var(--primary-color); /* Viền màu Neon */
-    margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(0, 210, 255, 0.3); /* Hiệu ứng tỏa sáng */
+    background: rgba(11, 16, 26, 0.8);
 }
