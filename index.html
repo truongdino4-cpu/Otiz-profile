@@ -94,82 +94,6 @@
             </div>
         </div>
 </section>
-
-    <section id="experience" class="section smarthome-section">
-        <div class="container">
-            <h2>Trải Nghiệm Ngôi Nhà Aqara</h2>
-            <p style="text-align: center; color: var(--primary-color); margin-bottom: 30px;">
-                <i class="fa-solid fa-hand-pointer"></i> Chạm vào các thiết bị để điều khiển ngôi nhà
-            </p>
-            
-            <div class="blueprint-container">
-                <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" class="house-blueprint">
-                    <defs>
-                        <filter id="glow-blue" x="-50%" y="-50%" width="200%" height="200%">
-                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                        </filter>
-                        <filter id="glow-yellow" x="-50%" y="-50%" width="200%" height="200%">
-                             <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-                             <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                        </filter>
-                    </defs>
-
-                    <g class="structure">
-                        <rect x="50" y="50" width="700" height="500" fill="none" stroke="#334155" stroke-width="2"/> <line x1="50" y1="300" x2="750" y2="300" stroke="#334155" stroke-width="4"/> <line x1="400" y1="50" x2="400" y2="550" stroke="#334155" stroke-width="2" stroke-dasharray="5,5"/> <polyline points="250,550 350,425 250,300" fill="none" stroke="#334155" stroke-width="3"/>
-                    </g>
-                    
-                    <g class="room-labels" fill="#64748b" font-size="14">
-                        <text x="70" y="80">Tầng 2 - Phòng Ngủ</text>
-                        <text x="420" y="80">Tầng 2 - Hành lang</text>
-                        <text x="70" y="330">Tầng 1 - Phòng Khách</text>
-                        <text x="420" y="330">Tầng 1 - WC & Bếp</text>
-                    </g>
-
-                    <g id="zone-f1-living">
-                        <circle id="light-f1" cx="225" cy="350" r="15" class="device light" />
-                        <rect id="switch-f1" x="100" y="450" width="30" height="40" class="device switch" onclick="toggleDevice('light-f1', 'switch-f1')" />
-                        <path d="M 115 450 V 350 H 210" class="wire" id="wire-f1" />
-                    </g>
-
-                    <g id="zone-f1-wc">
-                        <circle id="light-wc" cx="575" cy="350" r="15" class="device light" />
-                        <path id="sensor-wc" d="M 560 310 Q 575 290 590 310 L 575 320 Z" class="device sensor" onclick="triggerSensor('light-wc', 'sensor-wc')" />
-                        <circle cx="575" cy="350" r="60" class="sensor-wave" id="wave-wc" />
-                    </g>
-
-                    <g id="zone-stairs">
-                        <circle id="light-stairs" cx="300" cy="425" r="15" class="device light yellow-light" />
-                        <rect id="switch-stairs-f1" x="260" y="500" width="30" height="40" class="device switch" onclick="toggleStairs()" />
-                        <rect id="switch-stairs-f2" x="260" y="250" width="30" height="40" class="device switch" onclick="toggleStairs()" />
-                         <path d="M 275 500 V 425 H 285 M 275 290 V 425" class="wire stairs-wire" />
-                    </g>
-
-                    <g id="zone-f2-bedroom">
-                        <circle id="light-f2" cx="225" cy="100" r="15" class="device light yellow-light" />
-                        <rect id="switch-f2" x="100" y="200" width="30" height="40" class="device switch" onclick="toggleDevice('light-f2', 'switch-f2')" />
-                        <g id="curtain-f2" onclick="toggleCurtain()">
-                            <rect x="60" y="100" width="10" height="150" class="curtain-rod"/>
-                            <path id="curtain-fabric" d="M 70 100 Q 90 175 70 250 H 300 Q 320 175 300 100 Z" class="device curtain closed" />
-                        </g>
-                        <path d="M 115 200 V 100 H 210" class="wire" id="wire-f2"/>
-                    </g>
-
-                    <g id="zone-f2-hall">
-                        <circle id="hub-center" cx="575" cy="200" r="25" class="device hub" onclick="playHubSound()" />
-                        <text x="555" y="205" fill="#000" font-size="10" font-weight="bold" pointer-events="none">HUB M2</text>
-                        <circle cx="575" cy="200" r="40" class="hub-wave" id="hub-wave-1"/>
-                        <circle cx="575" cy="200" r="60" class="hub-wave" id="hub-wave-2"/>
-                        
-                        <g id="camera-g3" transform="translate(730, 150)" onclick="panCamera()">
-                             <rect x="0" y="0" width="20" height="30" fill="#334155"/> <circle cx="10" cy="15" r="12" class="device camera-body" /> <circle cx="10" cy="15" r="5" fill="#000" class="camera-lens" /> <path d="M 10 15 L -30 50 L 50 50 Z" class="camera-beam" />
-                        </g>
-                    </g>
-                </svg>
-            </div>
-        </div>
-         <audio id="hub-sound" src="https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3"></audio>
-    </section>
     
     <footer>
         <div class="container">
@@ -304,6 +228,7 @@
 </body>
 
 </html>
+
 
 
 
